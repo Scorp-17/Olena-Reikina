@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #111111;
+    background: rgba(255, 255, 255, 0.8) url('image/pexels-mikhail-nilov-8296977.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    /* Занимает 100% высоты экрана */
+}
+
+header {
+    background: linear-gradient(135deg, #1512ce, #c9e5e6);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header .contact-info {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fcfcfc;
+    text-decoration: none;
+}
+
+section {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#omnie {
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+#omnie img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+h2 {
+    color: #070707;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+blockquote {
+    border-left: 5px solid #090b0f;
+    margin: 20px 0;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
+#Certyfikaty {
+    text-align: center;
+    margin-top: 50px;
+    /* Примерный отступ сверху для выравнивания по центру */
+}
+
+/* Общие стили для слайдера и его контейнера */
+.slider-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+}
+
+.slider {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.slide {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+}
+
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.call-button,
+.facebook-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.call-button {
+    background-color: #007BFF;
+}
+
+.call-button:hover {
+    background-color: #0056b3;
+}
+
+.facebook-button {
+    background-color: #3b5998;
+}
+
+.facebook-button:hover {
+    background-color: #2d4373;
+}
+
+footer {
+    background: linear-gradient(135deg, #1512ce, #c9e5e6);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    header .contact-info {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    form {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #omnie img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
