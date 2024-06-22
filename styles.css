@@ -79,8 +79,6 @@ blockquote cite {
     font-weight: bold;
 }
 
-
-
 #Certyfikaty {
     text-align: center;
     margin-top: 50px;
@@ -93,6 +91,7 @@ blockquote cite {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     display: flex;
+    justify-content: center;
 }
 
 .slider {
@@ -100,13 +99,21 @@ blockquote cite {
     scroll-snap-type: x mandatory;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    align-items: center;
 }
 
 .slide {
     scroll-snap-align: center;
     flex: 0 0 auto;
+    margin: 0 10px;
 }
 
+.slide img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
 .button-container {
     text-align: center;
