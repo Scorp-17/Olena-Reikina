@@ -1,23 +1,24 @@
-// Возможно, вам потребуется JavaScript для управления активным слайдом
 const slider = document.querySelector('.slider');
-let isScrolling;
+const slides = document.querySelectorAll('.slide');
+const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('prev');
 
-slider.addEventListener('scroll', function () {
-    clearTimeout(isScrolling);
-    isScrolling = setTimeout(function() {
-        // Логика для определения активного слайда
-        let activeSlideIndex = Math.round(slider.scrollLeft / slider.clientWidth);
-        setActiveSlide(activeSlideIndex);
-    }, 250);
+let currentIndex = 0;
+
+nextButton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        updateSlider();
+    }
 });
 
-function setActiveSlide(index) {
-    const slides = document.querySelectorAll('.slide');
-    slides.forEach((slide, i) => {
-        if (i === index) {
-            slide.classList.add('active');
-        } else {
-            slide.classList.remove('active');
-        }
-    });
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+    }
+});
+
+function updateSlider() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }

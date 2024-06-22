@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #1512ce, #c9e5e6);
+    background: linear-gradient(135deg, #000000, #3b3a3a);
     color: white;
     padding: 20px;
     text-align: center;
@@ -87,32 +87,30 @@ blockquote cite {
 
 /* Общие стили для слайдера и его контейнера */
 .slider-container {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .slider {
     display: flex;
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    align-items: center;
+    transition: transform 0.5s ease;
 }
 
 .slide {
-    scroll-snap-align: center;
-    flex: 0 0 auto;
-    margin: 0 10px;
+    min-width: 100%;
+    box-sizing: border-box;
 }
 
 .slide img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+    /* Закругление углов */
 }
 
 .button-container {
@@ -132,6 +130,10 @@ blockquote cite {
     margin: 5px;
 }
 
+.centered {
+    text-align: center;
+}
+
 .call-button {
     background-color: #007BFF;
 }
@@ -149,7 +151,7 @@ blockquote cite {
 }
 
 footer {
-    background: linear-gradient(135deg, #1512ce, #c9e5e6);
+    background: linear-gradient(135deg, #000000, #3b3a3a);
     color: white;
     text-align: center;
     padding: 10px 0;
