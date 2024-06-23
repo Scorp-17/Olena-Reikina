@@ -7,24 +7,57 @@ body {
     background: rgba(255, 255, 255, 0.8) url('image/pexels-mikhail-nilov-8296977.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    /* Занимает 100% высоты экрана */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Общие стили для body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    /* Цвет фона */
+}
+
+/* Стили для заголовка в header */
 header {
-    background: linear-gradient(135deg, #000000, #3b3a3a);
-    color: white;
-    padding: 20px;
+    background: linear-gradient(135deg, #000000, #8d8d8d);
+    /* Цвет фона заголовка */
+    color: #ffffff;
+    /* Цвет текста заголовка */
+    text-align: center;
+    padding: 20px 0;
+    /* Внутренние отступы сверху и снизу */
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Тень текста */
+    margin: 0;
+    /* Убираем внешние отступы */
+}
+
+/* Стили для контактной информации в header */
+.contact-info {
     text-align: center;
 }
 
-header .contact-info {
-    display: inline-block;
-    vertical-align: middle;
+.contact-info p {
+    margin: 5px 0;
+    /* Отступы между параграфами */
 }
 
+/* Стили для навигации */
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -33,9 +66,16 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fcfcfc;
+    color: #ffffff;
+    /* Цвет ссылок в навигации */
     text-decoration: none;
 }
+
+nav ul li a:hover {
+    text-decoration: underline;
+    /* Подчеркивание ссылок при наведении */
+}
+
 
 section {
     padding: 40px;
@@ -79,38 +119,108 @@ blockquote cite {
     font-weight: bold;
 }
 
-#Certyfikaty {
-    text-align: center;
-    margin-top: 50px;
-    /* Примерный отступ сверху для выравнивания по центру */
-}
-
-/* Общие стили для слайдера и его контейнера */
-.slider-container {
-    width: 100%;
-    overflow: hidden;
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;
     position: relative;
-    max-width: 600px;
-    margin: 0 auto;
+    overflow: hidden;
+    height: 100%;
+    /* Пример фиксированной высоты */
 }
 
-.slider {
-    display: flex;
-    transition: transform 0.5s ease;
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.mySlides {
+    display: none;
 }
 
 .slide {
     min-width: 100%;
-    box-sizing: border-box;
+    text-align: center;
 }
 
 .slide img {
-    width: 100%;
+    max-width: 100%;
+    /* Изображение займет максимальную доступную ширину */
     height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: 10px;
-    /* Закругление углов */
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    background-color: #000000;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
 }
 
 .button-container {
@@ -182,6 +292,23 @@ footer {
     #omnie img {
         width: 100px;
         height: 100px;
+    }
+
+    .prev,
+    .next {
+        display: none;
+        /* Скрыть кнопки на мобильных устройствах */
+    }
+
+    .numbertext,
+    .text {
+        display: none;
+        /* Скрыть текст и номера на мобильных устройствах */
+    }
+
+    .dot {
+        display: none;
+        /* Скрыть индикаторы на мобильных устройствах */
     }
 }
 
