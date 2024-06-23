@@ -34,40 +34,40 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// Добавляем обработчики для кнопок "prev" и "next"
+// Добавляем обработчики для кнопок "prev" и "next" с использованием mousedown и touchend
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
 
-prevButton.addEventListener('click', () => {
+prevButton.addEventListener('mousedown', () => {
     plusSlides(-1);
 });
 
-nextButton.addEventListener('click', () => {
+nextButton.addEventListener('mousedown', () => {
     plusSlides(1);
 });
 
-// Добавляем обработчики для точек (индикаторов слайдов)
+// Добавляем обработчики для точек (индикаторов слайдов) с использованием mousedown и touchend
 const dots = document.getElementsByClassName('dot');
 
 Array.from(dots).forEach((dot, index) => {
-    dot.addEventListener('click', () => {
+    dot.addEventListener('mousedown', () => {
         currentSlide(index + 1);
     });
 });
 
-// Добавляем обработчики для сенсорных событий на мобильных устройствах
-prevButton.addEventListener('touchstart', (event) => {
+// Добавляем обработчики для событий touchend на мобильных устройствах
+prevButton.addEventListener('touchend', (event) => {
     event.preventDefault(); // Предотвращаем действие по умолчанию
     plusSlides(-1);
 });
 
-nextButton.addEventListener('touchstart', (event) => {
+nextButton.addEventListener('touchend', (event) => {
     event.preventDefault(); // Предотвращаем действие по умолчанию
     plusSlides(1);
 });
 
 Array.from(dots).forEach((dot, index) => {
-    dot.addEventListener('touchstart', (event) => {
+    dot.addEventListener('touchend', (event) => {
         event.preventDefault(); // Предотвращаем действие по умолчанию
         currentSlide(index + 1);
     });
