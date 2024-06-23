@@ -46,29 +46,11 @@ nextButton.addEventListener('mousedown', () => {
     plusSlides(1);
 });
 
-// Добавляем обработчики для точек (индикаторов слайдов) с использованием mousedown и touchend
+// Добавляем обработчики для точек (индикаторов слайдов) с использованием click
 const dots = document.getElementsByClassName('dot');
 
 Array.from(dots).forEach((dot, index) => {
-    dot.addEventListener('mousedown', () => {
-        currentSlide(index + 1);
-    });
-});
-
-// Добавляем обработчики для событий touchend на мобильных устройствах
-prevButton.addEventListener('touchend', (event) => {
-    event.preventDefault(); // Предотвращаем действие по умолчанию
-    plusSlides(-1);
-});
-
-nextButton.addEventListener('touchend', (event) => {
-    event.preventDefault(); // Предотвращаем действие по умолчанию
-    plusSlides(1);
-});
-
-Array.from(dots).forEach((dot, index) => {
-    dot.addEventListener('touchend', (event) => {
-        event.preventDefault(); // Предотвращаем действие по умолчанию
+    dot.addEventListener('click', () => {
         currentSlide(index + 1);
     });
 });
