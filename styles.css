@@ -267,51 +267,53 @@ footer {
     padding: 10px 0;
 }
 
-/* Адаптивные стили */
+/* Медиа-запрос для мобильных устройств */
 @media (max-width: 768px) {
-    header .contact-info {
-        display: block;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    nav ul {
-        text-align: center;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 5px 0;
-    }
-
-    form {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    #omnie img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .prev,
-    .next {
-        display: none;
-        /* Скрыть кнопки на мобильных устройствах */
-    }
-
-    .numbertext,
-    .text {
-        display: none;
-        /* Скрыть текст и номера на мобильных устройствах */
-    }
-
     .dot {
         /* стили для точек на мобильных устройствах */
-        width: 10px;
         height: 10px;
+        width: 10px;
         /* другие стили */
     }
+}
+
+nav ul {
+    text-align: center;
+}
+
+nav ul li {
+    display: block;
+    margin: 5px 0;
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#omnie img {
+    width: 100px;
+    height: 100px;
+}
+
+.prev,
+.next {
+    display: none;
+    /* Скрыть кнопки на мобильных устройствах */
+}
+
+.numbertext,
+.text {
+    display: none;
+    /* Скрыть текст и номера на мобильных устройствах */
+}
+
+.dot {
+    /* стили для точек на мобильных устройствах */
+    width: 10px;
+    height: 10px;
+    /* другие стили */
+}
 }
 
 .social-icons {
